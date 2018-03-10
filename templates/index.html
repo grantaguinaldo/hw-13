@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Homework 13 :: Grant Aguinaldo</title>
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='./css/stylesheet.css') }}">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+
+</head>
+<body>
+
+    <!-- Jumobtron -->
+    <div class='container'>
+        <div class="jumbotron">
+            <h1 class="display-3">Welcome to the Belly Button Diversity Dashboard</h1>
+                <p class="lead">To start, select a sample number from the dropdown menu below.</p>
+
+        </div>
+    </div>
+
+
+    <div class='container'>
+        <div class="row">
+            <div class="col-sm-4" style="width: 480px; height: 200px;">
+                <center>
+                    <h2>Routes</h2>
+                        <ul>
+                            <li>api/v1/otu</li>
+                            <li>api/v1/names</li>
+                            <li>api/v1/wfreq/&ltsample&gt</li>
+                            <li>api/v1/metadata/&ltsample&gt</li>
+                            <li>api/v1/samples/&ltsample&gt</li>
+                        </ul>
+                </center>
+            </div>
+
+            <div class="col-sm-4" style="width: 480px; height: 200px;">
+                <center>
+                    <h2>Sample Selection</h2>
+                        <select id="selDataset" onchange="getData(this.value)">
+                            <option value=#>Select Sample</option>
+                    </select>
+                </center>
+            </div>
+
+            <div class="col-sm-4">
+                <center>
+                    <h2>Sample MetaData</h2>
+                        <ul id='metaList'></ul>
+                </center>
+            </div>
+        </div>
+    </div>
+
+
+    <hr>
+
+
+    <div class='container'>
+        <div class='row'>
+            <div class='col-sm-12'>
+                <center><h2>Pie Chart of the Top 10 Bacterial Species Found</h2></center>
+                    <div id="pie"style="width: 480px; height: 500px;"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <hr>
+
+    <div class='container'>
+        <div class='row'>
+            <div class='col-sm-12'>
+                <center><h2>Bubble Chart of the Bacteria Distrubution (all data)</h2></center>
+                    <div id="bubble" style="width: 480px; height: 400px;"></div>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+      <div class='container'>
+        <div class='row'>
+            <div class='col-sm-12'>
+                <center><h2>Gauge Chart of the Number of Washes</h2></center>
+                    <div id="gauge" style="width: 480px; height: 400px;"></div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="{{ url_for('static', filename='./javascript/app.js') }}"></script>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</body>
+</html>
